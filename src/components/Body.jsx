@@ -21,36 +21,12 @@ useEffect(()=>{
 },[]);
 
 const fetchData= async ()=>{
-      // const data= await fetch(
-      //   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      // );
-  //  const json=await data.json();
-  //console.log(data);
-  //console.log(data.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-  // console.log(json);
-  //console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-  // setListOfRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  // setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   console.log(listOfRes);
   setListOfRes(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   setFilteredRestaurant(data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       }
 
-//console.log("Body rendered");
-// & hence O/P: Body rendered (first printed) n then "Useeffect called" is printed.
 
-// const TopRestaurant=()=>{
-//    const filteredList=listOfRes.filter((items)=>
-//        Number(items?.info?.avgRating) > 4.5
-//    )
-//    setFilteredRestaurant(filteredList)
-// }
-
-//conditional rendering....
-// if(listOfRes.length === 0){
-//   // return <h1>Loading......</h1>
-//   return <Shimmer/>
-// }
 const onlineStatus= useOnlineStatus();
 
 if(onlineStatus === false) return (
